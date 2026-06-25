@@ -2,37 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrueEar — Privacy Policy</title>
     <style>
         body { font-family: -apple-system, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #1d1d1f; line-height: 1.6; }
-        h1 { font-size: 28px; } h2 { font-size: 18px; margin-top: 32px; }
+        h1 { font-size: 28px; }
+        h2 { font-size: 18px; margin-top: 32px; }
         p { color: #3d3d3f; }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .lang-btn {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid #1d1d1f;
+            background: transparent;
+            font-size: 14px;
+            cursor: pointer;
+            font-family: -apple-system, sans-serif;
+            color: #1d1d1f;
+            transition: background 0.15s, color 0.15s;
+        }
+        .lang-btn.active {
+            background: #1d1d1f;
+            color: #fff;
+        }
+
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
     </style>
 </head>
 <body>
-    <h1>TrueEar — Privacy Policy</h1>
-    <p><strong>Last updated:</strong> June 22, 2026</p>
 
-    <h2>Overview</h2>
-    <p>TrueEar is an iOS application that analyzes headphone hardware signals and audio frequency response using Apple's public APIs. We are committed to protecting your privacy.</p>
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">English</button>
+        <button class="lang-btn" onclick="setLang('es')">Español</button>
+    </div>
 
-    <h2>Data Collection</h2>
-    <p>TrueEar does <strong>not</strong> collect, store, transmit, or share any personal data. The app does not require an account, does not connect to any server, and does not use analytics or advertising services.</p>
+    <!-- ENGLISH -->
+    <div id="content-en" class="lang-content active">
+        <h1>TrueEar — Privacy Policy</h1>
+        <p><strong>Last updated:</strong> June 22, 2026</p>
+        <h2>Overview</h2>
+        <p>TrueEar is an iOS application that analyzes headphone hardware signals and audio frequency response using Apple's public APIs. We are committed to protecting your privacy.</p>
+        <h2>Data Collection</h2>
+        <p>TrueEar does <strong>not</strong> collect, store, transmit, or share any personal data. The app does not require an account, does not connect to any server, and does not use analytics or advertising services.</p>
+        <h2>Hardware Access</h2>
+        <p>TrueEar reads Bluetooth audio device information and motion sensor data (when available) solely to perform the authenticity and frequency tests. This data is processed entirely on your device and is never transmitted anywhere.</p>
+        <h2>Audio</h2>
+        <p>TrueEar generates audio tones for the frequency test using your device's audio engine. No audio is recorded or stored at any time.</p>
+        <h2>Third-Party Services</h2>
+        <p>TrueEar does not use any third-party SDKs, analytics tools, or advertising networks.</p>
+        <h2>Children's Privacy</h2>
+        <p>TrueEar does not collect data from anyone, including children under 13.</p>
+        <h2>Contact</h2>
+        <p>If you have questions about this privacy policy, contact us at: <a href="mailto:mikelizondojr@icloud.com">mikelizondojr@icloud.com</a></p>
+    </div>
 
-    <h2>Hardware Access</h2>
-    <p>TrueEar reads Bluetooth audio device information and motion sensor data (when available) solely to perform the authenticity and frequency tests. This data is processed entirely on your device and is never transmitted anywhere.</p>
+    <!-- ESPAÑOL -->
+    <div id="content-es" class="lang-content">
+        <h1>TrueEar — Política de Privacidad</h1>
+        <p><strong>Última actualización:</strong> 22 de junio de 2026</p>
+        <h2>Resumen</h2>
+        <p>TrueEar es una aplicación para iOS que analiza señales de hardware de audífonos y respuesta de frecuencia de audio usando las APIs públicas de Apple. Estamos comprometidos con la protección de tu privacidad.</p>
+        <h2>Recopilación de datos</h2>
+        <p>TrueEar <strong>no</strong> recopila, almacena, transmite ni comparte ningún dato personal. La app no requiere cuenta, no se conecta a ningún servidor y no usa servicios de analítica ni publicidad.</p>
+        <h2>Acceso al hardware</h2>
+        <p>TrueEar lee información del dispositivo de audio Bluetooth y datos del sensor de movimiento (cuando están disponibles) únicamente para realizar los tests de autenticidad y frecuencias. Estos datos se procesan completamente en tu dispositivo y nunca se transmiten a ningún lugar.</p>
+        <h2>Audio</h2>
+        <p>TrueEar genera tonos de audio para el test de frecuencias usando el motor de audio de tu dispositivo. No se graba ni almacena audio en ningún momento.</p>
+        <h2>Servicios de terceros</h2>
+        <p>TrueEar no usa ningún SDK de terceros, herramientas de analítica ni redes publicitarias.</p>
+        <h2>Privacidad infantil</h2>
+        <p>TrueEar no recopila datos de nadie, incluyendo menores de 13 años.</p>
+        <h2>Contacto</h2>
+        <p>Si tienes preguntas sobre esta política de privacidad, contáctanos en: <a href="mailto:mikelizondojr@icloud.com">mikelizondojr@icloud.com</a></p>
+    </div>
 
-    <h2>Audio</h2>
-    <p>TrueEar generates audio tones for the frequency test using your device's audio engine. No audio is recorded or stored at any time.</p>
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.querySelector('[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+        }
 
-    <h2>Third-Party Services</h2>
-    <p>TrueEar does not use any third-party SDKs, analytics tools, or advertising networks.</p>
+        const browserLang = navigator.language?.startsWith('es') ? 'es' : 'en';
+        setLang(browserLang);
+    </script>
 
-    <h2>Children's Privacy</h2>
-    <p>TrueEar does not collect data from anyone, including children under 13.</p>
-
-    <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at: <a href="mailto:tu@email.com">mikelizondojr@icloud.com</a></p>
 </body>
 </html>
